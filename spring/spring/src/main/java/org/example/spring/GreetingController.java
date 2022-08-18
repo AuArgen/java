@@ -10,7 +10,7 @@ import java.util.Map;
 public class GreetingController {
 
     @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="Argen")
+    public String greeting(@RequestParam(name="name", required=false, defaultValue="Argen :)")
                                String name, Map<String, Object> model) {
         model.put("name", name);
         return "greeting";
