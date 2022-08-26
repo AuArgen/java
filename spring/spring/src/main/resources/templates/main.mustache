@@ -8,6 +8,27 @@
     <title>Main</title>
 </head>
 <body>
-    <h1>{{some}}</h1>
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+    <input type="submit" value="Sign Out"/>
+</form>
+    <h1>Form add post</h1>
+    <form action="" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="text" placeholder="Enter text" name="text"/>
+        <input type="text" placeholder="Enter tag" name="tag"/>
+        <input type="submit" value="Add post">
+    </form>
+    <form action="filter" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="text" name ="filter">
+        <input type="submit" value="Search">
+    </form>
+    <h1>List message</h1>
+    {{#messages}}
+        <b> {{id}}</b>
+        <h1> {{text}}</h1>
+        <p> {{tag}}</p>
+    {{/messages}}
 </body>
 </html>
